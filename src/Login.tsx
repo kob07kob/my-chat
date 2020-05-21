@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Proxy } from './server';
-import { TextInput } from './TextInput.tsx'
+import { TextInput } from './TextInput'
 import { proxy } from './App';
 
 export class Login extends Component {
@@ -11,7 +11,7 @@ export class Login extends Component {
             <div className="login">
                 <p>{this.state.register ? "Switch back to " : "Have no account yet? Go and "} <a href="" onClick={e => {
                     e.preventDefault();
-                    this.setState(state => ({ register: !state.register })); // pass a function instead of object 
+                    this.setState((e:any) => ({ register: !(e.register) })); // pass a function instead of object would not build because of 
                 }}>
                     {this.state.register ? "Login" : "Register"} </a>
                 </p>

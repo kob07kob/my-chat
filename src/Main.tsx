@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ConversationDto } from "./chat";
-import { LeftPane } from "./LeftPane.tsx";
-import { RightPane } from "./RightPane.tsx";
+import { LeftPane } from "./LeftPane";
+import { RightPane } from "./RightPane";
 import { proxy } from "./App";
 export class Main extends Component {
     state = { selectedConversation: undefined as (ConversationDto | undefined) }; render() {

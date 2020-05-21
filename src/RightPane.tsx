@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { TextInputAndButton } from "./TextInputAndButton.tsx";
-import { MessageCard } from "./MessageCard.tsx";
+import { TextInputAndButton } from "./TextInputAndButton";
+import { MessageCard } from "./MessageCard";
 import { proxy } from "./App";
 import { ConversationDto } from "./chat";
 export class RightPane extends Component<{ conversation?: ConversationDto, onBack: () => void }> {

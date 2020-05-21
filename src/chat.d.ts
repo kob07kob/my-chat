@@ -1,7 +1,8 @@
 export interface MessageDto {
     id: number;
     timeStamp: string;
-    referenceTo: number; // 0: normal message, +: update, -: delete senderId: string;
+    referenceTo: number; // 0: normal message, +: update, -: delete
+    senderId: string;
     contentType: number;
     content: string;
 }

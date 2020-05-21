@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInputOptions, TextInput } from "./TextInput.tsx";
+import { TextInputOptions, TextInput } from "./TextInput";
 
 export interface TextInputAndButtonOptions extends TextInputOptions {
     buttonContent?: string;

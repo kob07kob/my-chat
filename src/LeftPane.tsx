@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { InboxDto, ConversationDto } from "./chat";
-import { TextInputAndButton } from "./TextInputAndButton.tsx";
-import { ConversationCard } from "./ConversationCard.tsx";
+import { TextInputAndButton } from "./TextInputAndButton";
+import { ConversationCard } from "./ConversationCard";
 import { proxy } from "./App";
 
 export class LeftPane extends Component<{

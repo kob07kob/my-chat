@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Login } from './Login.tsx'
+import { Main } from './Main.tsx'
+import { Proxy } from './server.ts'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export var proxy = new Proxy();
+export default class App extends Component {
+  state = { showLogin: true };
+  componentDidMount() {
+    proxy.addEventListener("login", () => this.setState({ showLogin: false }));
+  }
+  //proxy = new Proxy();
+  render() {
+    proxy.addEventListener("login", () => {
+      console.log("log in received")
+    });
+    return (
+      <div className="app">
+        { this.state.showLogin ? <Login /> : <Main /> }
+      </div>
+    );
+  }
 }
-
-export default App;

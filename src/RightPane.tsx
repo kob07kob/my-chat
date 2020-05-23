@@ -13,6 +13,7 @@ export class RightPane extends Component<{ conversation?: ConversationDto, onBac
         proxy.removeAllEventListener(this);
     }
     onSend(text: string) {
+        console.log(text);
         proxy.sendPacket({ type: "message", channelId: this.props.conversation!.channelId, referenceTo: 0, contentType: 0, content: `D: ${text}` });
         return true;
     }

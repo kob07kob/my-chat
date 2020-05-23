@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Proxy } from './server';
 import { TextInput } from './TextInput'
 import { proxy } from './App';
+import './Login.css';
 
 export class Login extends Component {
     state: MyState = { email: "", password: "", displayName: "", register: false };
@@ -26,7 +27,7 @@ export class Login extends Component {
                 <TextInput type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.setState({ password: e })} onEnter={() => this.onClick()} />
                 {this.state.register &&
                     <TextInput type="text" placeholder="Display Name (Agent Smith)" value={this.state.displayName}
-                        onChange={e => this.setState({ displayName: e })} onEnter={() => this.onClick()} />}
+                        onChange={e => this.setState({ displayName: e })} onEnter={() => this.onClick()} canChangeFromOutside={true}/>}
                 <button type="button" onClick={() => this.onClick()}>
                     {this.state.register ? "Register" : "Login"}
                 </button>

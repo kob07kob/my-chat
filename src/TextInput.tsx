@@ -6,12 +6,13 @@ export interface TextInputOptions {
     onChange?: (value: string) => void; type?: "text" | "password" | "email"; placeholder?: string;
     onEnter?: () => void;
     autofocus?: boolean;
+    canChangeFromOutside?:boolean;
 };
 
 export class TextInput extends Component<TextInputOptions> {
     state = { value: this.props.value, focus: false }
     render() {
-        if(this.props.value !=this.state.value){
+        if(this.props.value !=this.state.value && this.props.canChangeFromOutside){
             this.setState({ value: this.props.value });
             //not the perfect solution, but if the value changes outside of the component it will not refresh the state
             //this was my easiest workaround

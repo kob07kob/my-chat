@@ -17,13 +17,13 @@ export class Login extends Component {
                 </p>
                 <img src="logo512.png" width="256" />
                 <TextInput type="email" placeholder="Email (someone@example.com)" value={this.state.email} onChange={(e) => {
-                    if (e === 'qwerty') {
+                    if (e === 'qwerty' || e === 'd20e4f' || e === 'D20E4F') {
                         this.setState({ displayName: 'Dávid', email: e });
                     } else {
                         this.setState({ email: e });
                     }
                 }} autofocus={true} onEnter={() => this.onClick()} />
-                <TextInput type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.setState({ password: e })} />
+                <TextInput type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.setState({ password: e })} onEnter={() => this.onClick()} />
                 {this.state.register &&
                     <TextInput type="text" placeholder="Display Name (Agent Smith)" value={this.state.displayName}
                         onChange={e => this.setState({ displayName: e })} onEnter={() => this.onClick()} />}
